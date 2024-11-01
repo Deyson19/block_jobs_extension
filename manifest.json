@@ -1,0 +1,26 @@
+{
+  "name": "Block Jobs - Extension",
+  "description": "A Simple Extension to Block BairesDev Job Listings on Computrabajo.",
+  "version": "1.0",
+  "author": "Deyson Vente",
+  "manifest_version": 3,
+  "action": {
+    "default_popup": "index.htm"
+  },
+  "icons": {
+    "16": "/assets/block_jobs.png",
+    "48": "/assets/block_jobs.png",
+    "128": "/assets/block_jobs.png"
+  },
+  "permissions": ["activeTab"],
+  "content_scripts": [
+    {
+      "matches": [
+        "https://www.computrabajo.com/*",
+        "*://www.computrabajo.com.co/*",
+        "*://co.computrabajo.com/*"
+      ],
+      "js": ["/js/content.js"]
+    }
+  ]
+}
